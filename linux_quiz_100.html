@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trắc nghiệm Linux</title>
+    <style>
+        :root {
+            --primary-color: #2196F3;
+            --secondary-color: #FFC107;
+            --text-color: #333;
+            --bg-color: #f5f5f5;
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        [data-theme="dark"] {
+            --primary-color: #64B5F6;
+            --secondary-color: #FFD54F;
+            --text-color: #E0E0E0;
+            --bg-color: #121212;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: var(--bg-color);
+            padding: 1rem;
+            min-height: 100vh;
+            transition: var(--transition);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+
+        [data-theme="dark"] .container {
+            background: #1E1E1E;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            transition: var(--transition);
+        }
+
+        .quiz-container {
+            background: transparent;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .question {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .answers {
+            display: grid;
+            gap: 0.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .answer-option {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+            background: white;
+            animation: slideIn 0.3s ease;
+        }
+
+        [data-theme="dark"] .answer-option {
+            background: #2D2D2D;
+            border-color: #404040;
+        }
+
+        .answer-option:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(33, 150, 243, 0.1);
+        }
+
+        .answer-option input[type="radio"] {
+            margin-right: 1rem;
+            width: 20px;
+            height: 20px;
+            accent-color: var(--primary-color);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-size: 1rem;
+            transition: var(--transition);
+            width: 100%;
+            font-weight: 500;
+        }
+
+        .btn:hover {
+            background: #1976D2;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(33, 150, 243, 0.2);
+        }
+
+        .result {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            font-weight: bold;
+            text-align: center;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .result.correct {
+            background: #E8F5E9;
+            color: #2E7D32;
+        }
+
+        .result.incorrect {
+            background: #FFEBEE;
+            color: #C62828;
+        }
+
+        [data-theme="dark"] .result.correct {
+            background: #1B5E20;
+            color: #81C784;
+        }
+
+        [data-theme="dark"] .result.incorrect {
+            background: #B71C1C;
+            color: #EF9A9A;
+        }
+
+        .progress {
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: var(--primary-color);
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(180deg);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 0.5rem;
+            }
+            
+            .container {
+                padding: 1rem;
+                margin: 0;
+                border-radius: 0;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .question {
+                font-size: 1.1rem;
+            }
+
+            .answer-option {
+                padding: 0.8rem;
+            }
+
+            .btn {
+                padding: 0.7rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+    <div class="container">
+        <h1>🧠 Trắc nghiệm Linux</h1>
+        
+        <div class="quiz-container" id="quiz">
+            <div class="progress" id="progress">Câu 1/100</div>
+            
+            <div class="question" id="questionText">Đang tải câu hỏi...</div>
+            
+            <div class="answers" id="answers"></div>
+            
+            <button class="btn" onclick="nextQuestion()">Câu tiếp theo</button>
+            
+            <div class="result" id="result"></div>
+        </div>
+    </div>
+
+    <script>
+        let questions = [
+            {
+                "question": "[Câu 1] Lệnh nào cho phép tạo 1 thư mục mới?",
+                "answers": [
+                    "mkdir",
+                    "touch",
+                    "rm",
+                    "cd"
+                ],
+                "correct": "mkdir"
+            },
+            {
+                "question": "[Câu 2] Lệnh nào dùng để xóa một tập tin?",
+                "answers": [
+                    "rm",
+                    "rmdir",
+                    "delete",
+                    "mv"
+                ],
+                "correct": "rm"
+            },
+            {
+                "question": "[Câu 3] Lệnh nào để sao chép tập tin?",
+                "answers": [
+                    "mv",
+                    "copy",
+                    "cp",
+                    "scp"
+                ],
+                "correct": "cp"
+            },
+            {
+                "question": "[Câu 4] Lệnh nào để thay đổi quyền truy cập tập tin?",
+                "answers": [
+                    "chmod",
+                    "chperm",
+                    "perm",
+                    "accessmod"
+                ],
+                "correct": "chmod"
+            },
+            {
+                "question": "[Câu 5] Lệnh nào để thay đổi chủ sở hữu tập tin?",
+                "answers": [
+                    "chuser",
+                    "chown",
+                    "owner",
+                    "setown"
+                ],
+                "correct": "chown"
+            },
+            {
+                "question": "[Câu 6] Lệnh nào để xem nội dung thư mục hiện tại?",
+                "answers": [
+                    "ls",
+                    "pwd",
+                    "cd",
+                    "cat"
+                ],
+                "correct": "ls"
+            },
+            {
+                "question": "[Câu 7] Lệnh nào để hiển thị đường dẫn thư mục hiện tại?",
+                "answers": [
+                    "path",
+                    "dir",
+                    "pwd",
+                    "cd"
+                ],
+                "correct": "pwd"
+            },
+            {
+                "question": "[Câu 8] Lệnh nào để tìm kiếm tập tin trong hệ thống?",
+                "answers": [
+                    "search",
+                    "find",
+                    "locate",
+                    "scan"
+                ],
+                "correct": "find"
+            },
+            {
+                "question": "[Câu 9] Lệnh nào để nén tập tin thành định dạng .tar.gz?",
+                "answers": [
+                    "zip",
+                    "compress",
+                    "tar",
+                    "gzip"
+                ],
+                "correct": "tar"
+            },
+            {
+                "question": "[Câu 10] Lệnh nào để tạo tập tin rỗng?",
+                "answers": [
+                    "mkdir",
+                    "newfile",
+                    "cat",
+                    "touch"
+                ],
+                "correct": "touch"
+            },
+            {
+                "question": "[Câu 11] Lệnh nào cho phép tạo 1 thư mục mới?",
+                "answers": [
+                    "mkdir",
+                    "touch",
+                    "rm",
+                    "cd"
+                ],
+                "correct": "mkdir"
+            },
+            {
+                "question": "[Câu 12] Lệnh nào dùng để xóa một tập tin?",
+                "answers": [
+                    "rm",
+                    "rmdir",
+                    "delete",
+                    "mv"
+                ],
+                "correct": "rm"
+            },
+            {
+                "question": "[Câu 13] Lệnh nào để sao chép tập tin?",
+                "answers": [
+                    "mv",
+                    "copy",
+                    "cp",
+                    "scp"
+                ],
+                "correct": "cp"
+            },
+            {
+                "question": "[Câu 14] Lệnh nào để thay đổi quyền truy cập tập tin?",
+                "answers": [
+                    "chmod",
+                    "chperm",
+                    "perm",
+                    "accessmod"
+                ],
+                "correct": "chmod"
+            },
+            {
+                "question": "[Câu 15] Lệnh nào để thay đổi chủ sở hữu tập tin?",
+                "answers": [
+                    "chuser",
+                    "chown",
+                    "owner",
+                    "setown"
+                ],
+                "correct": "chown"
+            },
+            {
+                "question": "[Câu 16] Lệnh nào để xem nội dung thư mục hiện tại?",
+                "answers": [
+                    "ls",
+                    "pwd",
+                    "cd",
+                    "cat"
+                ],
+                "correct": "ls"
+            },
+            {
+                "question": "[Câu 17] Lệnh nào để hiển thị đường dẫn thư mục hiện tại?",
+                "answers": [
+                    "path",
+                    "dir",
+                    "pwd",
+                    "cd"
+                ],
+                "correct": "pwd"
+            },
+            {
+                "question": "[Câu 18] Lệnh nào để tìm kiếm tập tin trong hệ thống?",
+                "answers": [
+                    "search",
+                    "find",
+                    "locate",
+                    "scan"
+                ],
+                "correct": "find"
+            },
+            {
+                "question": "[Câu 19] Lệnh nào để nén tập tin thành định dạng .tar.gz?",
+                "answers": [
+                    "zip",
+                    "compress",
+                    "tar",
+                    "gzip"
+                ],
+                "correct": "tar"
+            },
+            {
+                "question": "[Câu 20] Lệnh nào để tạo tập tin rỗng?",
+                "answers": [
+                    "mkdir",
+                    "newfile",
+                    "cat",
+                    "touch"
+                ],
+                "correct": "touch"
+            },
+            {
+                "question": "[Câu 21] Lệnh nào cho phép tạo 1 thư mục mới?",
+                "answers": [
+                    "mkdir",
+                    "touch",
+                    "rm",
+                    "cd"
+                ],
+                "correct": "mkdir"
+            },
+            {
+                "question": "[Câu 22] Lệnh nào dùng để xóa một tập tin?",
+                "answers": [
+                    "rm",
+                    "rmdir",
+                    "delete",
+                    "mv"
+                ],
+                "correct": "rm"
+            },
+            {
+                "question": "[Câu 23] Lệnh nào để sao chép tập tin?",
+                "answers": [
+                    "mv",
+                    "copy",
+                    "cp",
+                    "scp"
+                ],
+                "correct": "cp"
+            },
+            {
+                "question": "[Câu 24] Lệnh nào để thay đổi quyền truy cập tập tin?",
+                "answers": [
+                    "chmod",
+                    "chperm",
+                    "perm",
+                    "accessmod"
+                ],
+                "correct": "chmod"
+            },
+            {
+                "question": "[Câu 25] Lệnh nào để thay đổi chủ sở hữu tập tin?",
+                "answers": [
+                    "chuser",
+                    "chown",
+                    "owner",
+                    "setown"
+                ],
+                "correct": "chown"
+            },
+            {
+                "question": "[Câu 26] Lệnh nào để xem nội dung thư mục hiện tại?",
+                "answers": [
+                    "ls",
+                    "pwd",
+                    "cd",
+                    "cat"
+                ],
+                "correct": "ls"
+            },
+            {
+                "question": "[Câu 27] Lệnh nào để hiển thị đường dẫn thư mục hiện tại?",
+                "answers": [
+                    "path",
+                    "dir",
+                    "pwd",
+                    "cd"
+                ],
+                "correct": "pwd"
+            },
+            {
+                "question": "[Câu 28] Lệnh nào để tìm kiếm tập tin trong hệ thống?",
+                "answers": [
+                    "search",
+                    "find",
+                    "locate",
+                    "scan"
+                ],
+                "correct": "find"
+            },
+            {
+                "question": "[Câu 29] Lệnh nào để nén tập tin thành định dạng .tar.gz?",
+                "answers": [
+                    "zip",
+                    "compress",
+                    "tar",
+                    "gzip"
+                ],
+                "correct": "tar"
+            },
+            {
+                "question": "[Câu 30] Lệnh nào để tạo tập tin rỗng?",
+                "answers": [
+                    "mkdir",
+                    "newfile",
+                    "cat",
+                    "touch"
+                ],
+                "correct": "touch"
+            },
+            {
+                "question": "[Câu 31] Lệnh nào cho phép tạo 1 thư mục mới?",
+                "answers": [
+                    "mkdir",
+                    "touch",
+                    "rm",
+                    "cd"
+                ],
+                "correct": "mkdir"
+            },
+            {
+                "question": "[Câu 32] Lệnh nào dùng để xóa một tập tin?",
+                "answers": [
+                    "rm",
+                    "rmdir",
+                    "delete",
+                    "mv"
+                ],
+                "correct": "rm"
+            },
+            {
+                "question": "[Câu 33] Lệnh nào để sao chép tập tin?",
+                "answers": [
+                    "mv",
+                    "copy",
+                    "cp",
+                    "scp"
+                ],
+                "correct": "cp"
+            },
+            {
+                "question": "[Câu 34] Lệnh nào để thay đổi quyền truy cập tập tin?",
+                "answers": [
+                    "chmod",
+                    "chperm",
+                    "perm",
+                    "accessmod"
+                ],
+                "correct": "chmod"
+            },
+            {
+                "question": "[Câu 35] Lệnh nào để thay đổi chủ sở hữu tập tin?",
+                "answers": [
+                    "chuser",
+                    "chown",
+                    "owner",
+                    "setown"
+                ],
+                "correct": "chown"
+            },
+            {
+                "question": "[Câu 36] Lệnh nào để xem nội dung thư mục hiện tại?",
+                "answers": [
+                    "ls",
+                    "pwd",
+                    "cd",
+                    "cat"
+                ],
+                "correct": "ls"
+            },
+            {
+                "question": "[Câu 37] Lệnh nào để hiển thị đường dẫn thư mục hiện tại?",
+                "answers": [
+                    "path",
+                    "dir",
+                    "pwd",
+                    "cd"
+                ],
+                "correct": "pwd"
+            },
+            {
+                "question": "[Câu 38] Lệnh nào để tìm kiếm tập tin trong hệ thống?",
+                "answers": [
+                    "search",
+                    "find",
+                    "locate",
+                    "scan"
+                ],
+                "correct": "find"
+            },
+            {
+                "question": "[Câu 39] Lệnh nào để nén tập tin thành định dạng .tar.gz?",
+                "answers": [
+                    "zip",
+                    "compress",
+                    "tar",
+                    "gzip"
+                ],
+                "correct": "tar"
+            },
+            {
+                "question": "[Câu 40] Lệnh nào để tạo tập tin rỗng?",
+                "answers": [
+                    "mkdir",
+                    "newfile",
+                    "cat",
+                    "touch"
+                ],
+                "correct": "touch"
+            },
+            {
+                "question": "[Câu 41] Lệnh nào cho phép tạo 1 thư mục mới?",
+                "answers": [
+                    "mkdir",
+                    "touch",
+                    "rm",
+                    "cd"
+                ],
+                "correct": "mkdir"
+            },
+            {
+                "question": "[Câu 42] Lệnh nào dùng để xóa một tập tin?",
+                "answers": [
+                    "rm",
+                    "rmdir",
+                    "delete",
+                    "mv"
+                ],
+                "correct": "rm"
+            },
+            {
+                "question": "[Câu 43] Lệnh nào để sao chép tập tin?",
+                "answers": [
+                    "mv",
+                    "copy",
+                    "cp",
+                    "scp"
+                ],
+                "correct": "cp"
+            },
+            {
+                "question": "[Câu 44] Lệnh nào để thay đổi quyền truy cập tập tin?",
+                "answers": [
+                    "chmod",
+                    "chperm",
+                    "perm",
+                    "accessmod"
+                ],
+                "correct": "chmod"
+            },
+            {
+                "question": "[Câu 45] Lệnh nào để thay đổi chủ sở hữu tập tin?",
+                "answers": [
+                    "chuser",
+                    "chown",
+                    "owner",
+                    "setown"
+                ],
+                "correct": "chown"
+            },
+            {
+                "question": "[Câu 46] Lệnh nào để xem nội dung thư mục hiện tại?",
+                "answers": [
+                    "ls",
+                    "pwd",
+                    "cd",
+                    "cat"
+                ],
+                "correct": "ls"
+            },
+            {
+                "question": "[Câu 47] Lệnh nào để hiển thị đường dẫn thư mục hiện tại?",
+                "answers": [
+                    "path",
+                    "dir",
+                    "pwd",
+                    "cd"
+                ],
+                "correct": "pwd"
+            },
+            {
+                "question": "[Câu 48] Lệnh nào để tìm kiếm tập tin trong hệ thống?",
+                "answers": [
+                    "search",
+                    "find",
+                    "locate",
+                    "scan"
+                ],
+                "correct": "find"
+            },
+            {
+                "question": "[Câu 49] Lệnh nào để nén tập tin thành định dạng .tar.gz?",
+                "answers": [
+                    "zip",
+                    "compress",
+                    "tar",
+                    "gzip"
+                ],
+                "correct": "tar"
+            },
+            {
+                "question": "[Câu 50] Lệnh nào để tạo tập tin rỗng?",
+                "answers": [
+                    "mkdir",
+                    "newfile",
+                    "cat",
+                    "touch"
+                ],
+                "correct": "touch"
+            },
+            {
+                "question": "[Câu 51] Lệnh nào cho phép tạo 1 thư mục mới?",
+                "answers": [
+                    "mkdir",
+                    "touch",
+                    "rm",
+                    "cd"
+                ],
+                "correct": "mkdir"
+            },
+            {
+                "question": "[Câu 52] Lệnh nào dùng để xóa một tập tin?",
+                "answers": [
+                    "rm",
+                    "rmdir",
+                    "delete",
+                    "mv"
+                ],
+                "correct": "rm"
+            },
+            {
+                "question": "[Câu 53] Lệnh nào để sao chép tập tin?",
+                "answers": [
+                    "mv",
+                    "copy",
+                    "cp",
+                    "scp"
+                ],
+                "correct": "cp"
+            },
+            {
+                "question": "[Câu 54] Lệnh nào để thay đổi quyền truy cập tập tin?",
+                "answers": [
+                    "chmod",
+                    "chperm",
+                    "perm",
+                    "accessmod"
+                ],
+                "correct": "chmod"
+            },
+            {
+                "question": "[Câu 55] Lệnh nào để thay đổi chủ sở hữu tập tin?",
+                "answers": [
+                    "chuser",
+                    "chown",
+                    "owner",
+                    "setown"
+                ],
+                "correct": "chown"
+            },
+            {
+                "question": "[Câu 56] Lệnh nào để xem nội dung thư mục hiện tại?",
+                "answers": [
+                    "ls",
+                    "pwd",
+                    "cd",
+                    "cat"
+                ],
+                "correct": "ls"
+            },
+            {
+                "question": "[Câu 57] Lệnh nào để hiển thị đường dẫn thư mục hiện tại?",
+                "answers": [
+                    "path",
+                    "dir",
+                    "pwd",
+                    "cd"
+                ],
+                "correct": "pwd"
+            },
+            {
+                "question": "[Câu 58] Lệnh nào để tìm kiếm tập tin trong hệ thống?",
+                "answers": [
+                    "search",
+                    "find",
+                    "locate",
+                    "scan"
+                ],
+                "correct": "find"
+            },
+            {
+                "question": "[Câu 59] Lệnh nào để nén tập tin thành định dạng .tar.gz?",
+                "answers": [
+                    "zip",
+                    "compress",
+                    "tar",
+                    "gzip"
+                ],
+                "correct": "tar"
+            },
+            {
+                "question": "[Câu 60] Lệnh nào để tạo tập tin rỗng?",
+                "answers": [
+                    "mkdir",
+                    "newfile",
+                    "cat",
+                    "touch"
+                ],
+                "correct": "touch"
+            },
+            {
+                "question": "[Câu 61] Lệnh nào cho phép tạo 1 thư mục mới?",
+                "answers": [
+                    "mkdir",
+                    "touch",
+                    "rm",
+                    "cd"
+                ],
+                "correct": "mkdir"
+            },
+            {
+                "question": "[Câu 62] Lệnh nào dùng để xóa một tập tin?",
+                "answers": [
+                    "rm",
+                    "rmdir",
+                    "delete",
+                    "mv"
+                ],
+                "correct": "rm"
+            },
+            {
+                "question": "[Câu 63] Lệnh nào để sao chép tập tin?",
+                "answers": [
+                    "mv",
+                    "copy",
+                    "cp",
+                    "scp"
+                ],
+                "correct": "cp"
+            },
+            {
+                "question": "[Câu 64] Lệnh nào để thay đổi quyền truy cập tập tin?",
+                "answers": [
+                    "chmod",
+                    "chperm",
+                    "perm",
+                    "accessmod"
+                ],
+                "correct": "chmod"
+            },
+            {
+                "question": "[Câu 65] Lệnh nào để thay đổi chủ sở hữu tập tin?",
+                "answers": [
+                    "chuser",
+                    "chown",
+                    "owner",
+                    "setown"
+                ],
+                "correct": "chown"
+            },
+            {
+                "question": "[Câu 66] Lệnh nào để xem nội dung thư mục hiện tại?",
+                "answers": [
+                    "ls",
+                    "pwd",
+                    "cd",
+                    "cat"
+                ],
+                "correct": "ls"
+            },
+            {
+                "question": "[Câu 67] Lệnh nào để hiển thị đường dẫn thư mục hiện tại?",
+                "answers": [
+                    "path",
+                    "dir",
+                    "pwd",
+                    "cd"
+                ],
+                "correct": "pwd"
+            },
+            {
+                "question": "[Câu 68] Lệnh nào để tìm kiếm tập tin trong hệ thống?",
+                "answers": [
+                    "search",
+                    "find",
+                    "locate",
+                    "scan"
+                ],
+                "correct": "find"
+            },
+            {
+                "question": "[Câu 69] Lệnh nào để nén tập tin thành định dạng .tar.gz?",
+                "answers": [
+                    "zip",
+                    "compress",
+                    "tar",
+                    "gzip"
+                ],
+                "correct": "tar"
+            },
+            {
+                "question": "[Câu 70] Lệnh nào để tạo tập tin rỗng?",
+                "answers": [
+                    "mkdir",
+                    "newfile",
+                    "cat",
+                    "touch"
+                ],
+                "correct": "touch"
+            },
+            {
+                "question": "[Câu 71] Lệnh nào cho phép tạo 1 thư mục mới?",
+                "answers": [
+                    "mkdir",
+                    "touch",
+                    "rm",
+                    "cd"
+                ],
+                "correct": "mkdir"
+            },
+            {
+                "question": "[Câu 72] Lệnh nào dùng để xóa một tập tin?",
+                "answers": [
+                    "rm",
+                    "rmdir",
+                    "delete",
+                    "mv"
+                ],
+                "correct": "rm"
+            },
+            {
+                "question": "[Câu 73] Lệnh nào để sao chép tập tin?",
+                "answers": [
+                    "mv",
+                    "copy",
+                    "cp",
+                    "scp"
+                ],
+                "correct": "cp"
+            },
+            {
+                "question": "[Câu 74] Lệnh nào để thay đổi quyền truy cập tập tin?",
+                "answers": [
+                    "chmod",
+                    "chperm",
+                    "perm",
+                    "accessmod"
+                ],
+                "correct": "chmod"
+            },
+            {
+                "question": "[Câu 75] Lệnh nào để thay đổi chủ sở hữu tập tin?",
+                "answers": [
+                    "chuser",
+                    "chown",
+                    "owner",
+                    "setown"
+                ],
+                "correct": "chown"
+            },
+            {
+                "question": "[Câu 76] Lệnh nào để xem nội dung thư mục hiện tại?",
+                "answers": [
+                    "ls",
+                    "pwd",
+                    "cd",
+                    "cat"
+                ],
+                "correct": "ls"
+            },
+            {
+                "question": "[Câu 77] Lệnh nào để hiển thị đường dẫn thư mục hiện tại?",
+                "answers": [
+                    "path",
+                    "dir",
+                    "pwd",
+                    "cd"
+                ],
+                "correct": "pwd"
+            },
+            {
+                "question": "[Câu 78] Lệnh nào để tìm kiếm tập tin trong hệ thống?",
+                "answers": [
+                    "search",
+                    "find",
+                    "locate",
+                    "scan"
+                ],
+                "correct": "find"
+            },
+            {
+                "question": "[Câu 79] Lệnh nào để nén tập tin thành định dạng .tar.gz?",
+                "answers": [
+                    "zip",
+                    "compress",
+                    "tar",
+                    "gzip"
+                ],
+                "correct": "tar"
+            },
+            {
+                "question": "[Câu 80] Lệnh nào để tạo tập tin rỗng?",
+                "answers": [
+                    "mkdir",
+                    "newfile",
+                    "cat",
+                    "touch"
+                ],
+                "correct": "touch"
+            },
+            {
+                "question": "[Câu 81] Lệnh nào cho phép tạo 1 thư mục mới?",
+                "answers": [
+                    "mkdir",
+                    "touch",
+                    "rm",
+                    "cd"
+                ],
+                "correct": "mkdir"
+            },
+            {
+                "question": "[Câu 82] Lệnh nào dùng để xóa một tập tin?",
+                "answers": [
+                    "rm",
+                    "rmdir",
+                    "delete",
+                    "mv"
+                ],
+                "correct": "rm"
+            },
+            {
+                "question": "[Câu 83] Lệnh nào để sao chép tập tin?",
+                "answers": [
+                    "mv",
+                    "copy",
+                    "cp",
+                    "scp"
+                ],
+                "correct": "cp"
+            },
+            {
+                "question": "[Câu 84] Lệnh nào để thay đổi quyền truy cập tập tin?",
+                "answers": [
+                    "chmod",
+                    "chperm",
+                    "perm",
+                    "accessmod"
+                ],
+                "correct": "chmod"
+            },
+            {
+                "question": "[Câu 85] Lệnh nào để thay đổi chủ sở hữu tập tin?",
+                "answers": [
+                    "chuser",
+                    "chown",
+                    "owner",
+                    "setown"
+                ],
+                "correct": "chown"
+            },
+            {
+                "question": "[Câu 86] Lệnh nào để xem nội dung thư mục hiện tại?",
+                "answers": [
+                    "ls",
+                    "pwd",
+                    "cd",
+                    "cat"
+                ],
+                "correct": "ls"
+            },
+            {
+                "question": "[Câu 87] Lệnh nào để hiển thị đường dẫn thư mục hiện tại?",
+                "answers": [
+                    "path",
+                    "dir",
+                    "pwd",
+                    "cd"
+                ],
+                "correct": "pwd"
+            },
+            {
+                "question": "[Câu 88] Lệnh nào để tìm kiếm tập tin trong hệ thống?",
+                "answers": [
+                    "search",
+                    "find",
+                    "locate",
+                    "scan"
+                ],
+                "correct": "find"
+            },
+            {
+                "question": "[Câu 89] Lệnh nào để nén tập tin thành định dạng .tar.gz?",
+                "answers": [
+                    "zip",
+                    "compress",
+                    "tar",
+                    "gzip"
+                ],
+                "correct": "tar"
+            },
+            {
+                "question": "[Câu 90] Lệnh nào để tạo tập tin rỗng?",
+                "answers": [
+                    "mkdir",
+                    "newfile",
+                    "cat",
+                    "touch"
+                ],
+                "correct": "touch"
+            },
+            {
+                "question": "[Câu 91] Lệnh nào cho phép tạo 1 thư mục mới?",
+                "answers": [
+                    "mkdir",
+                    "touch",
+                    "rm",
+                    "cd"
+                ],
+                "correct": "mkdir"
+            },
+            {
+                "question": "[Câu 92] Lệnh nào dùng để xóa một tập tin?",
+                "answers": [
+                    "rm",
+                    "rmdir",
+                    "delete",
+                    "mv"
+                ],
+                "correct": "rm"
+            },
+            {
+                "question": "[Câu 93] Lệnh nào để sao chép tập tin?",
+                "answers": [
+                    "mv",
+                    "copy",
+                    "cp",
+                    "scp"
+                ],
+                "correct": "cp"
+            },
+            {
+                "question": "[Câu 94] Lệnh nào để thay đổi quyền truy cập tập tin?",
+                "answers": [
+                    "chmod",
+                    "chperm",
+                    "perm",
+                    "accessmod"
+                ],
+                "correct": "chmod"
+            },
+            {
+                "question": "[Câu 95] Lệnh nào để thay đổi chủ sở hữu tập tin?",
+                "answers": [
+                    "chuser",
+                    "chown",
+                    "owner",
+                    "setown"
+                ],
+                "correct": "chown"
+            },
+            {
+                "question": "[Câu 96] Lệnh nào để xem nội dung thư mục hiện tại?",
+                "answers": [
+                    "ls",
+                    "pwd",
+                    "cd",
+                    "cat"
+                ],
+                "correct": "ls"
+            },
+            {
+                "question": "[Câu 97] Lệnh nào để hiển thị đường dẫn thư mục hiện tại?",
+                "answers": [
+                    "path",
+                    "dir",
+                    "pwd",
+                    "cd"
+                ],
+                "correct": "pwd"
+            },
+            {
+                "question": "[Câu 98] Lệnh nào để tìm kiếm tập tin trong hệ thống?",
+                "answers": [
+                    "search",
+                    "find",
+                    "locate",
+                    "scan"
+                ],
+                "correct": "find"
+            },
+            {
+                "question": "[Câu 99] Lệnh nào để nén tập tin thành định dạng .tar.gz?",
+                "answers": [
+                    "zip",
+                    "compress",
+                    "tar",
+                    "gzip"
+                ],
+                "correct": "tar"
+            },
+            {
+                "question": "[Câu 100] Lệnh nào để tạo tập tin rỗng?",
+                "answers": [
+                    "mkdir",
+                    "newfile",
+                    "cat",
+                    "touch"
+                ],
+                "correct": "touch"
+            }
+        ];
+        
+        let currentQuestion = 0;
+        let score = 0;
+        let isAnimating = false;
+
+        // Hàm trộn ngẫu nhiên mảng
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        // Trộn câu hỏi và câu trả lời khi bắt đầu
+        function initializeQuiz() {
+            // Trộn câu hỏi
+            questions = shuffleArray([...questions]);
+            
+            // Trộn câu trả lời cho mỗi câu hỏi
+            questions.forEach(question => {
+                question.answers = shuffleArray([...question.answers]);
+            });
+        }
+
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.body.setAttribute('data-theme', savedTheme);
+        }
+
+        function showQuestion() {
+            if (currentQuestion >= questions.length) {
+                showFinalResult();
+                return;
+            }
+
+            const q = questions[currentQuestion];
+            document.getElementById("progress").textContent = `Câu ${currentQuestion + 1}/${questions.length}`;
+            
+            const questionText = document.getElementById("questionText");
+            questionText.style.opacity = '0';
+            setTimeout(() => {
+                questionText.textContent = q.question;
+                questionText.style.opacity = '1';
+            }, 300);
+            
+            const answersDiv = document.getElementById("answers");
+            answersDiv.innerHTML = "";
+            
+            q.answers.forEach((ans, index) => {
+                const label = document.createElement("label");
+                label.className = "answer-option";
+                label.style.animationDelay = `${index * 0.1}s`;
+                label.innerHTML = `
+                    <input type="radio" name="answer" value="${ans}">
+                    <span>${ans}</span>
+                `;
+                answersDiv.appendChild(label);
+            });
+            
+            document.getElementById("result").textContent = "";
+            document.getElementById("result").className = "result";
+        }
+
+        function nextQuestion() {
+            if (isAnimating) return;
+            
+            const selected = document.querySelector('input[name="answer"]:checked');
+            if (!selected) {
+                alert("Vui lòng chọn một đáp án!");
+                return;
+            }
+
+            isAnimating = true;
+            const answer = selected.value;
+            const correct = questions[currentQuestion].correct;
+            const result = document.getElementById("result");
+
+            if (answer === correct) {
+                score++;
+                result.textContent = "✅ Chính xác!";
+                result.className = "result correct";
+            } else {
+                result.textContent = `❌ Sai. Đáp án đúng là: ${correct}`;
+                result.className = "result incorrect";
+            }
+
+            currentQuestion++;
+            setTimeout(() => {
+                isAnimating = false;
+                showQuestion();
+            }, 1500);
+        }
+
+        function showFinalResult() {
+            const percentage = (score / questions.length) * 100;
+            const quizDiv = document.getElementById("quiz");
+            quizDiv.style.opacity = '0';
+            
+            setTimeout(() => {
+                quizDiv.innerHTML = `
+                    <h2 style="text-align: center; margin-bottom: 1.5rem;">🎉 Kết quả</h2>
+                    <div class="result ${percentage >= 70 ? 'correct' : 'incorrect'}" style="animation: fadeIn 0.5s ease">
+                        <p style="font-size: 1.2rem; margin-bottom: 1rem;">Bạn đã đúng ${score}/${questions.length} câu (${percentage.toFixed(1)}%)</p>
+                        <button class="btn" onclick="location.reload()">Làm lại bài</button>
+                    </div>
+                `;
+                quizDiv.style.opacity = '1';
+            }, 300);
+        }
+
+        // Add touch feedback
+        document.addEventListener('touchstart', function() {}, {passive: true});
+
+        // Khởi tạo quiz với câu hỏi và câu trả lời đã được trộn
+        initializeQuiz();
+        showQuestion();
+    </script>
+</body>
+</html>
