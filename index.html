@@ -253,1008 +253,507 @@
 
     <script>
         let questions = [
-            {
-                "question": "[Câu 1] Lệnh nào cho phép tạo 1 thư mục mới?",
-                "answers": [
-                    "mkdir",
-                    "touch",
-                    "rm",
-                    "cd"
-                ],
-                "correct": "mkdir"
-            },
-            {
-                "question": "[Câu 2] Lệnh nào dùng để xóa một tập tin?",
-                "answers": [
-                    "rm",
-                    "rmdir",
-                    "delete",
-                    "mv"
-                ],
-                "correct": "rm"
-            },
-            {
-                "question": "[Câu 3] Lệnh nào để sao chép tập tin?",
-                "answers": [
-                    "mv",
-                    "copy",
-                    "cp",
-                    "scp"
-                ],
-                "correct": "cp"
-            },
-            {
-                "question": "[Câu 4] Lệnh nào để thay đổi quyền truy cập tập tin?",
-                "answers": [
-                    "chmod",
-                    "chperm",
-                    "perm",
-                    "accessmod"
-                ],
-                "correct": "chmod"
-            },
-            {
-                "question": "[Câu 5] Lệnh nào để thay đổi chủ sở hữu tập tin?",
-                "answers": [
-                    "chuser",
-                    "chown",
-                    "owner",
-                    "setown"
-                ],
-                "correct": "chown"
-            },
-            {
-                "question": "[Câu 6] Lệnh nào để xem nội dung thư mục hiện tại?",
-                "answers": [
-                    "ls",
-                    "pwd",
-                    "cd",
-                    "cat"
-                ],
-                "correct": "ls"
-            },
-            {
-                "question": "[Câu 7] Lệnh nào để hiển thị đường dẫn thư mục hiện tại?",
-                "answers": [
-                    "path",
-                    "dir",
-                    "pwd",
-                    "cd"
-                ],
-                "correct": "pwd"
-            },
-            {
-                "question": "[Câu 8] Lệnh nào để tìm kiếm tập tin trong hệ thống?",
-                "answers": [
-                    "search",
-                    "find",
-                    "locate",
-                    "scan"
-                ],
-                "correct": "find"
-            },
-            {
-                "question": "[Câu 9] Lệnh nào để nén tập tin thành định dạng .tar.gz?",
-                "answers": [
-                    "zip",
-                    "compress",
-                    "tar",
-                    "gzip"
-                ],
-                "correct": "tar"
-            },
-            {
-                "question": "[Câu 10] Lệnh nào để tạo tập tin rỗng?",
-                "answers": [
-                    "mkdir",
-                    "newfile",
-                    "cat",
-                    "touch"
-                ],
-                "correct": "touch"
-            },
-            {
-                "question": "[Câu 11] Lệnh nào cho phép tạo 1 thư mục mới?",
-                "answers": [
-                    "mkdir",
-                    "touch",
-                    "rm",
-                    "cd"
-                ],
-                "correct": "mkdir"
-            },
-            {
-                "question": "[Câu 12] Lệnh nào dùng để xóa một tập tin?",
-                "answers": [
-                    "rm",
-                    "rmdir",
-                    "delete",
-                    "mv"
-                ],
-                "correct": "rm"
-            },
-            {
-                "question": "[Câu 13] Lệnh nào để sao chép tập tin?",
-                "answers": [
-                    "mv",
-                    "copy",
-                    "cp",
-                    "scp"
-                ],
-                "correct": "cp"
-            },
-            {
-                "question": "[Câu 14] Lệnh nào để thay đổi quyền truy cập tập tin?",
-                "answers": [
-                    "chmod",
-                    "chperm",
-                    "perm",
-                    "accessmod"
-                ],
-                "correct": "chmod"
-            },
-            {
-                "question": "[Câu 15] Lệnh nào để thay đổi chủ sở hữu tập tin?",
-                "answers": [
-                    "chuser",
-                    "chown",
-                    "owner",
-                    "setown"
-                ],
-                "correct": "chown"
-            },
-            {
-                "question": "[Câu 16] Lệnh nào để xem nội dung thư mục hiện tại?",
-                "answers": [
-                    "ls",
-                    "pwd",
-                    "cd",
-                    "cat"
-                ],
-                "correct": "ls"
-            },
-            {
-                "question": "[Câu 17] Lệnh nào để hiển thị đường dẫn thư mục hiện tại?",
-                "answers": [
-                    "path",
-                    "dir",
-                    "pwd",
-                    "cd"
-                ],
-                "correct": "pwd"
-            },
-            {
-                "question": "[Câu 18] Lệnh nào để tìm kiếm tập tin trong hệ thống?",
-                "answers": [
-                    "search",
-                    "find",
-                    "locate",
-                    "scan"
-                ],
-                "correct": "find"
-            },
-            {
-                "question": "[Câu 19] Lệnh nào để nén tập tin thành định dạng .tar.gz?",
-                "answers": [
-                    "zip",
-                    "compress",
-                    "tar",
-                    "gzip"
-                ],
-                "correct": "tar"
-            },
-            {
-                "question": "[Câu 20] Lệnh nào để tạo tập tin rỗng?",
-                "answers": [
-                    "mkdir",
-                    "newfile",
-                    "cat",
-                    "touch"
-                ],
-                "correct": "touch"
-            },
-            {
-                "question": "[Câu 21] Lệnh nào cho phép tạo 1 thư mục mới?",
-                "answers": [
-                    "mkdir",
-                    "touch",
-                    "rm",
-                    "cd"
-                ],
-                "correct": "mkdir"
-            },
-            {
-                "question": "[Câu 22] Lệnh nào dùng để xóa một tập tin?",
-                "answers": [
-                    "rm",
-                    "rmdir",
-                    "delete",
-                    "mv"
-                ],
-                "correct": "rm"
-            },
-            {
-                "question": "[Câu 23] Lệnh nào để sao chép tập tin?",
-                "answers": [
-                    "mv",
-                    "copy",
-                    "cp",
-                    "scp"
-                ],
-                "correct": "cp"
-            },
-            {
-                "question": "[Câu 24] Lệnh nào để thay đổi quyền truy cập tập tin?",
-                "answers": [
-                    "chmod",
-                    "chperm",
-                    "perm",
-                    "accessmod"
-                ],
-                "correct": "chmod"
-            },
-            {
-                "question": "[Câu 25] Lệnh nào để thay đổi chủ sở hữu tập tin?",
-                "answers": [
-                    "chuser",
-                    "chown",
-                    "owner",
-                    "setown"
-                ],
-                "correct": "chown"
-            },
-            {
-                "question": "[Câu 26] Lệnh nào để xem nội dung thư mục hiện tại?",
-                "answers": [
-                    "ls",
-                    "pwd",
-                    "cd",
-                    "cat"
-                ],
-                "correct": "ls"
-            },
-            {
-                "question": "[Câu 27] Lệnh nào để hiển thị đường dẫn thư mục hiện tại?",
-                "answers": [
-                    "path",
-                    "dir",
-                    "pwd",
-                    "cd"
-                ],
-                "correct": "pwd"
-            },
-            {
-                "question": "[Câu 28] Lệnh nào để tìm kiếm tập tin trong hệ thống?",
-                "answers": [
-                    "search",
-                    "find",
-                    "locate",
-                    "scan"
-                ],
-                "correct": "find"
-            },
-            {
-                "question": "[Câu 29] Lệnh nào để nén tập tin thành định dạng .tar.gz?",
-                "answers": [
-                    "zip",
-                    "compress",
-                    "tar",
-                    "gzip"
-                ],
-                "correct": "tar"
-            },
-            {
-                "question": "[Câu 30] Lệnh nào để tạo tập tin rỗng?",
-                "answers": [
-                    "mkdir",
-                    "newfile",
-                    "cat",
-                    "touch"
-                ],
-                "correct": "touch"
-            },
-            {
-                "question": "[Câu 31] Lệnh nào cho phép tạo 1 thư mục mới?",
-                "answers": [
-                    "mkdir",
-                    "touch",
-                    "rm",
-                    "cd"
-                ],
-                "correct": "mkdir"
-            },
-            {
-                "question": "[Câu 32] Lệnh nào dùng để xóa một tập tin?",
-                "answers": [
-                    "rm",
-                    "rmdir",
-                    "delete",
-                    "mv"
-                ],
-                "correct": "rm"
-            },
-            {
-                "question": "[Câu 33] Lệnh nào để sao chép tập tin?",
-                "answers": [
-                    "mv",
-                    "copy",
-                    "cp",
-                    "scp"
-                ],
-                "correct": "cp"
-            },
-            {
-                "question": "[Câu 34] Lệnh nào để thay đổi quyền truy cập tập tin?",
-                "answers": [
-                    "chmod",
-                    "chperm",
-                    "perm",
-                    "accessmod"
-                ],
-                "correct": "chmod"
-            },
-            {
-                "question": "[Câu 35] Lệnh nào để thay đổi chủ sở hữu tập tin?",
-                "answers": [
-                    "chuser",
-                    "chown",
-                    "owner",
-                    "setown"
-                ],
-                "correct": "chown"
-            },
-            {
-                "question": "[Câu 36] Lệnh nào để xem nội dung thư mục hiện tại?",
-                "answers": [
-                    "ls",
-                    "pwd",
-                    "cd",
-                    "cat"
-                ],
-                "correct": "ls"
-            },
-            {
-                "question": "[Câu 37] Lệnh nào để hiển thị đường dẫn thư mục hiện tại?",
-                "answers": [
-                    "path",
-                    "dir",
-                    "pwd",
-                    "cd"
-                ],
-                "correct": "pwd"
-            },
-            {
-                "question": "[Câu 38] Lệnh nào để tìm kiếm tập tin trong hệ thống?",
-                "answers": [
-                    "search",
-                    "find",
-                    "locate",
-                    "scan"
-                ],
-                "correct": "find"
-            },
-            {
-                "question": "[Câu 39] Lệnh nào để nén tập tin thành định dạng .tar.gz?",
-                "answers": [
-                    "zip",
-                    "compress",
-                    "tar",
-                    "gzip"
-                ],
-                "correct": "tar"
-            },
-            {
-                "question": "[Câu 40] Lệnh nào để tạo tập tin rỗng?",
-                "answers": [
-                    "mkdir",
-                    "newfile",
-                    "cat",
-                    "touch"
-                ],
-                "correct": "touch"
-            },
-            {
-                "question": "[Câu 41] Lệnh nào cho phép tạo 1 thư mục mới?",
-                "answers": [
-                    "mkdir",
-                    "touch",
-                    "rm",
-                    "cd"
-                ],
-                "correct": "mkdir"
-            },
-            {
-                "question": "[Câu 42] Lệnh nào dùng để xóa một tập tin?",
-                "answers": [
-                    "rm",
-                    "rmdir",
-                    "delete",
-                    "mv"
-                ],
-                "correct": "rm"
-            },
-            {
-                "question": "[Câu 43] Lệnh nào để sao chép tập tin?",
-                "answers": [
-                    "mv",
-                    "copy",
-                    "cp",
-                    "scp"
-                ],
-                "correct": "cp"
-            },
-            {
-                "question": "[Câu 44] Lệnh nào để thay đổi quyền truy cập tập tin?",
-                "answers": [
-                    "chmod",
-                    "chperm",
-                    "perm",
-                    "accessmod"
-                ],
-                "correct": "chmod"
-            },
-            {
-                "question": "[Câu 45] Lệnh nào để thay đổi chủ sở hữu tập tin?",
-                "answers": [
-                    "chuser",
-                    "chown",
-                    "owner",
-                    "setown"
-                ],
-                "correct": "chown"
-            },
-            {
-                "question": "[Câu 46] Lệnh nào để xem nội dung thư mục hiện tại?",
-                "answers": [
-                    "ls",
-                    "pwd",
-                    "cd",
-                    "cat"
-                ],
-                "correct": "ls"
-            },
-            {
-                "question": "[Câu 47] Lệnh nào để hiển thị đường dẫn thư mục hiện tại?",
-                "answers": [
-                    "path",
-                    "dir",
-                    "pwd",
-                    "cd"
-                ],
-                "correct": "pwd"
-            },
-            {
-                "question": "[Câu 48] Lệnh nào để tìm kiếm tập tin trong hệ thống?",
-                "answers": [
-                    "search",
-                    "find",
-                    "locate",
-                    "scan"
-                ],
-                "correct": "find"
-            },
-            {
-                "question": "[Câu 49] Lệnh nào để nén tập tin thành định dạng .tar.gz?",
-                "answers": [
-                    "zip",
-                    "compress",
-                    "tar",
-                    "gzip"
-                ],
-                "correct": "tar"
-            },
-            {
-                "question": "[Câu 50] Lệnh nào để tạo tập tin rỗng?",
-                "answers": [
-                    "mkdir",
-                    "newfile",
-                    "cat",
-                    "touch"
-                ],
-                "correct": "touch"
-            },
-            {
-                "question": "[Câu 51] Lệnh nào cho phép tạo 1 thư mục mới?",
-                "answers": [
-                    "mkdir",
-                    "touch",
-                    "rm",
-                    "cd"
-                ],
-                "correct": "mkdir"
-            },
-            {
-                "question": "[Câu 52] Lệnh nào dùng để xóa một tập tin?",
-                "answers": [
-                    "rm",
-                    "rmdir",
-                    "delete",
-                    "mv"
-                ],
-                "correct": "rm"
-            },
-            {
-                "question": "[Câu 53] Lệnh nào để sao chép tập tin?",
-                "answers": [
-                    "mv",
-                    "copy",
-                    "cp",
-                    "scp"
-                ],
-                "correct": "cp"
-            },
-            {
-                "question": "[Câu 54] Lệnh nào để thay đổi quyền truy cập tập tin?",
-                "answers": [
-                    "chmod",
-                    "chperm",
-                    "perm",
-                    "accessmod"
-                ],
-                "correct": "chmod"
-            },
-            {
-                "question": "[Câu 55] Lệnh nào để thay đổi chủ sở hữu tập tin?",
-                "answers": [
-                    "chuser",
-                    "chown",
-                    "owner",
-                    "setown"
-                ],
-                "correct": "chown"
-            },
-            {
-                "question": "[Câu 56] Lệnh nào để xem nội dung thư mục hiện tại?",
-                "answers": [
-                    "ls",
-                    "pwd",
-                    "cd",
-                    "cat"
-                ],
-                "correct": "ls"
-            },
-            {
-                "question": "[Câu 57] Lệnh nào để hiển thị đường dẫn thư mục hiện tại?",
-                "answers": [
-                    "path",
-                    "dir",
-                    "pwd",
-                    "cd"
-                ],
-                "correct": "pwd"
-            },
-            {
-                "question": "[Câu 58] Lệnh nào để tìm kiếm tập tin trong hệ thống?",
-                "answers": [
-                    "search",
-                    "find",
-                    "locate",
-                    "scan"
-                ],
-                "correct": "find"
-            },
-            {
-                "question": "[Câu 59] Lệnh nào để nén tập tin thành định dạng .tar.gz?",
-                "answers": [
-                    "zip",
-                    "compress",
-                    "tar",
-                    "gzip"
-                ],
-                "correct": "tar"
-            },
-            {
-                "question": "[Câu 60] Lệnh nào để tạo tập tin rỗng?",
-                "answers": [
-                    "mkdir",
-                    "newfile",
-                    "cat",
-                    "touch"
-                ],
-                "correct": "touch"
-            },
-            {
-                "question": "[Câu 61] Lệnh nào cho phép tạo 1 thư mục mới?",
-                "answers": [
-                    "mkdir",
-                    "touch",
-                    "rm",
-                    "cd"
-                ],
-                "correct": "mkdir"
-            },
-            {
-                "question": "[Câu 62] Lệnh nào dùng để xóa một tập tin?",
-                "answers": [
-                    "rm",
-                    "rmdir",
-                    "delete",
-                    "mv"
-                ],
-                "correct": "rm"
-            },
-            {
-                "question": "[Câu 63] Lệnh nào để sao chép tập tin?",
-                "answers": [
-                    "mv",
-                    "copy",
-                    "cp",
-                    "scp"
-                ],
-                "correct": "cp"
-            },
-            {
-                "question": "[Câu 64] Lệnh nào để thay đổi quyền truy cập tập tin?",
-                "answers": [
-                    "chmod",
-                    "chperm",
-                    "perm",
-                    "accessmod"
-                ],
-                "correct": "chmod"
-            },
-            {
-                "question": "[Câu 65] Lệnh nào để thay đổi chủ sở hữu tập tin?",
-                "answers": [
-                    "chuser",
-                    "chown",
-                    "owner",
-                    "setown"
-                ],
-                "correct": "chown"
-            },
-            {
-                "question": "[Câu 66] Lệnh nào để xem nội dung thư mục hiện tại?",
-                "answers": [
-                    "ls",
-                    "pwd",
-                    "cd",
-                    "cat"
-                ],
-                "correct": "ls"
-            },
-            {
-                "question": "[Câu 67] Lệnh nào để hiển thị đường dẫn thư mục hiện tại?",
-                "answers": [
-                    "path",
-                    "dir",
-                    "pwd",
-                    "cd"
-                ],
-                "correct": "pwd"
-            },
-            {
-                "question": "[Câu 68] Lệnh nào để tìm kiếm tập tin trong hệ thống?",
-                "answers": [
-                    "search",
-                    "find",
-                    "locate",
-                    "scan"
-                ],
-                "correct": "find"
-            },
-            {
-                "question": "[Câu 69] Lệnh nào để nén tập tin thành định dạng .tar.gz?",
-                "answers": [
-                    "zip",
-                    "compress",
-                    "tar",
-                    "gzip"
-                ],
-                "correct": "tar"
-            },
-            {
-                "question": "[Câu 70] Lệnh nào để tạo tập tin rỗng?",
-                "answers": [
-                    "mkdir",
-                    "newfile",
-                    "cat",
-                    "touch"
-                ],
-                "correct": "touch"
-            },
-            {
-                "question": "[Câu 71] Lệnh nào cho phép tạo 1 thư mục mới?",
-                "answers": [
-                    "mkdir",
-                    "touch",
-                    "rm",
-                    "cd"
-                ],
-                "correct": "mkdir"
-            },
-            {
-                "question": "[Câu 72] Lệnh nào dùng để xóa một tập tin?",
-                "answers": [
-                    "rm",
-                    "rmdir",
-                    "delete",
-                    "mv"
-                ],
-                "correct": "rm"
-            },
-            {
-                "question": "[Câu 73] Lệnh nào để sao chép tập tin?",
-                "answers": [
-                    "mv",
-                    "copy",
-                    "cp",
-                    "scp"
-                ],
-                "correct": "cp"
-            },
-            {
-                "question": "[Câu 74] Lệnh nào để thay đổi quyền truy cập tập tin?",
-                "answers": [
-                    "chmod",
-                    "chperm",
-                    "perm",
-                    "accessmod"
-                ],
-                "correct": "chmod"
-            },
-            {
-                "question": "[Câu 75] Lệnh nào để thay đổi chủ sở hữu tập tin?",
-                "answers": [
-                    "chuser",
-                    "chown",
-                    "owner",
-                    "setown"
-                ],
-                "correct": "chown"
-            },
-            {
-                "question": "[Câu 76] Lệnh nào để xem nội dung thư mục hiện tại?",
-                "answers": [
-                    "ls",
-                    "pwd",
-                    "cd",
-                    "cat"
-                ],
-                "correct": "ls"
-            },
-            {
-                "question": "[Câu 77] Lệnh nào để hiển thị đường dẫn thư mục hiện tại?",
-                "answers": [
-                    "path",
-                    "dir",
-                    "pwd",
-                    "cd"
-                ],
-                "correct": "pwd"
-            },
-            {
-                "question": "[Câu 78] Lệnh nào để tìm kiếm tập tin trong hệ thống?",
-                "answers": [
-                    "search",
-                    "find",
-                    "locate",
-                    "scan"
-                ],
-                "correct": "find"
-            },
-            {
-                "question": "[Câu 79] Lệnh nào để nén tập tin thành định dạng .tar.gz?",
-                "answers": [
-                    "zip",
-                    "compress",
-                    "tar",
-                    "gzip"
-                ],
-                "correct": "tar"
-            },
-            {
-                "question": "[Câu 80] Lệnh nào để tạo tập tin rỗng?",
-                "answers": [
-                    "mkdir",
-                    "newfile",
-                    "cat",
-                    "touch"
-                ],
-                "correct": "touch"
-            },
-            {
-                "question": "[Câu 81] Lệnh nào cho phép tạo 1 thư mục mới?",
-                "answers": [
-                    "mkdir",
-                    "touch",
-                    "rm",
-                    "cd"
-                ],
-                "correct": "mkdir"
-            },
-            {
-                "question": "[Câu 82] Lệnh nào dùng để xóa một tập tin?",
-                "answers": [
-                    "rm",
-                    "rmdir",
-                    "delete",
-                    "mv"
-                ],
-                "correct": "rm"
-            },
-            {
-                "question": "[Câu 83] Lệnh nào để sao chép tập tin?",
-                "answers": [
-                    "mv",
-                    "copy",
-                    "cp",
-                    "scp"
-                ],
-                "correct": "cp"
-            },
-            {
-                "question": "[Câu 84] Lệnh nào để thay đổi quyền truy cập tập tin?",
-                "answers": [
-                    "chmod",
-                    "chperm",
-                    "perm",
-                    "accessmod"
-                ],
-                "correct": "chmod"
-            },
-            {
-                "question": "[Câu 85] Lệnh nào để thay đổi chủ sở hữu tập tin?",
-                "answers": [
-                    "chuser",
-                    "chown",
-                    "owner",
-                    "setown"
-                ],
-                "correct": "chown"
-            },
-            {
-                "question": "[Câu 86] Lệnh nào để xem nội dung thư mục hiện tại?",
-                "answers": [
-                    "ls",
-                    "pwd",
-                    "cd",
-                    "cat"
-                ],
-                "correct": "ls"
-            },
-            {
-                "question": "[Câu 87] Lệnh nào để hiển thị đường dẫn thư mục hiện tại?",
-                "answers": [
-                    "path",
-                    "dir",
-                    "pwd",
-                    "cd"
-                ],
-                "correct": "pwd"
-            },
-            {
-                "question": "[Câu 88] Lệnh nào để tìm kiếm tập tin trong hệ thống?",
-                "answers": [
-                    "search",
-                    "find",
-                    "locate",
-                    "scan"
-                ],
-                "correct": "find"
-            },
-            {
-                "question": "[Câu 89] Lệnh nào để nén tập tin thành định dạng .tar.gz?",
-                "answers": [
-                    "zip",
-                    "compress",
-                    "tar",
-                    "gzip"
-                ],
-                "correct": "tar"
-            },
-            {
-                "question": "[Câu 90] Lệnh nào để tạo tập tin rỗng?",
-                "answers": [
-                    "mkdir",
-                    "newfile",
-                    "cat",
-                    "touch"
-                ],
-                "correct": "touch"
-            },
-            {
-                "question": "[Câu 91] Lệnh nào cho phép tạo 1 thư mục mới?",
-                "answers": [
-                    "mkdir",
-                    "touch",
-                    "rm",
-                    "cd"
-                ],
-                "correct": "mkdir"
-            },
-            {
-                "question": "[Câu 92] Lệnh nào dùng để xóa một tập tin?",
-                "answers": [
-                    "rm",
-                    "rmdir",
-                    "delete",
-                    "mv"
-                ],
-                "correct": "rm"
-            },
-            {
-                "question": "[Câu 93] Lệnh nào để sao chép tập tin?",
-                "answers": [
-                    "mv",
-                    "copy",
-                    "cp",
-                    "scp"
-                ],
-                "correct": "cp"
-            },
-            {
-                "question": "[Câu 94] Lệnh nào để thay đổi quyền truy cập tập tin?",
-                "answers": [
-                    "chmod",
-                    "chperm",
-                    "perm",
-                    "accessmod"
-                ],
-                "correct": "chmod"
-            },
-            {
-                "question": "[Câu 95] Lệnh nào để thay đổi chủ sở hữu tập tin?",
-                "answers": [
-                    "chuser",
-                    "chown",
-                    "owner",
-                    "setown"
-                ],
-                "correct": "chown"
-            },
-            {
-                "question": "[Câu 96] Lệnh nào để xem nội dung thư mục hiện tại?",
-                "answers": [
-                    "ls",
-                    "pwd",
-                    "cd",
-                    "cat"
-                ],
-                "correct": "ls"
-            },
-            {
-                "question": "[Câu 97] Lệnh nào để hiển thị đường dẫn thư mục hiện tại?",
-                "answers": [
-                    "path",
-                    "dir",
-                    "pwd",
-                    "cd"
-                ],
-                "correct": "pwd"
-            },
-            {
-                "question": "[Câu 98] Lệnh nào để tìm kiếm tập tin trong hệ thống?",
-                "answers": [
-                    "search",
-                    "find",
-                    "locate",
-                    "scan"
-                ],
-                "correct": "find"
-            },
-            {
-                "question": "[Câu 99] Lệnh nào để nén tập tin thành định dạng .tar.gz?",
-                "answers": [
-                    "zip",
-                    "compress",
-                    "tar",
-                    "gzip"
-                ],
-                "correct": "tar"
-            },
-            {
-                "question": "[Câu 100] Lệnh nào để tạo tập tin rỗng?",
-                "answers": [
-                    "mkdir",
-                    "newfile",
-                    "cat",
-                    "touch"
-                ],
-                "correct": "touch"
-            }
-        ];
-        
+    {
+        "question": "[Câu 1] Lệnh nào cho phép tạo 1 thư mục mới?",
+        "answers": ["mkdir", "touch", "rm", "cd"],
+        "correct": "mkdir"
+    },
+    {
+        "question": "[Câu 2] Lệnh nào dùng để xóa một tập tin?",
+        "answers": ["rm", "rmdir", "delete", "mv"],
+        "correct": "rm"
+    },
+    {
+        "question": "[Câu 3] Lệnh nào để sao chép tập tin?",
+        "answers": ["mv", "copy", "cp", "scp"],
+        "correct": "cp"
+    },
+    {
+        "question": "[Câu 4] Lệnh nào để thay đổi quyền truy cập tập tin?",
+        "answers": ["chmod", "chperm", "perm", "accessmod"],
+        "correct": "chmod"
+    },
+    {
+        "question": "[Câu 5] Lệnh nào để thay đổi chủ sở hữu tập tin?",
+        "answers": ["chuser", "chown", "owner", "setown"],
+        "correct": "chown"
+    },
+    {
+        "question": "[Câu 6] Lệnh nào để xem nội dung thư mục hiện tại?",
+        "answers": ["ls", "pwd", "cd", "cat"],
+        "correct": "ls"
+    },
+    {
+        "question": "[Câu 7] Lệnh nào để hiển thị đường dẫn thư mục hiện tại?",
+        "answers": ["path", "dir", "pwd", "cd"],
+        "correct": "pwd"
+    },
+    {
+        "question": "[Câu 8] Lệnh nào để tìm kiếm tập tin trong hệ thống?",
+        "answers": ["search", "find", "locate", "scan"],
+        "correct": "find"
+    },
+    {
+        "question": "[Câu 9] Lệnh nào để nén tập tin thành định dạng .tar.gz?",
+        "answers": ["zip", "compress", "tar", "gzip"],
+        "correct": "tar"
+    },
+    {
+        "question": "[Câu 10] Lệnh nào để tạo tập tin rỗng?",
+        "answers": ["mkdir", "newfile", "cat", "touch"],
+        "correct": "touch"
+    },
+    {
+        "question": "[Câu 11] Lệnh nào để di chuyển hoặc đổi tên tập tin?",
+        "answers": ["mv", "move", "rename", "cp"],
+        "correct": "mv"
+    },
+    {
+        "question": "[Câu 12] Lệnh nào để xóa thư mục rỗng?",
+        "answers": ["rmdir", "rm", "deldir", "removedir"],
+        "correct": "rmdir"
+    },
+    {
+        "question": "[Câu 13] Lệnh nào để hiển thị nội dung tập tin?",
+        "answers": ["cat", "show", "display", "view"],
+        "correct": "cat"
+    },
+    {
+        "question": "[Câu 14] Lệnh nào để hiển thị thông tin về không gian đĩa?",
+        "answers": ["df", "disk", "space", "diskfree"],
+        "correct": "df"
+    },
+    {
+        "question": "[Câu 15] Lệnh nào để hiển thị dung lượng thư mục?",
+        "answers": ["du", "size", "dirsize", "usage"],
+        "correct": "du"
+    },
+    {
+        "question": "[Câu 16] Lệnh nào để xem các tiến trình đang chạy?",
+        "answers": ["ps", "process", "proc", "tasks"],
+        "correct": "ps"
+    },
+    {
+        "question": "[Câu 17] Lệnh nào để kết thúc một tiến trình?",
+        "answers": ["kill", "stop", "end", "terminate"],
+        "correct": "kill"
+    },
+    {
+        "question": "[Câu 18] Lệnh nào để xem thông tin hệ thống thời gian thực?",
+        "answers": ["top", "monitor", "system", "info"],
+        "correct": "top"
+    },
+    {
+        "question": "[Câu 19] Lệnh nào để thay đổi thư mục làm việc?",
+        "answers": ["cd", "changedir", "goto", "move"],
+        "correct": "cd"
+    },
+    {
+        "question": "[Câu 20] Lệnh nào để hiển thị lịch sử lệnh?",
+        "answers": ["history", "hist", "commands", "log"],
+        "correct": "history"
+    },
+    {
+        "question": "[Câu 21] Lệnh nào để tìm kiếm văn bản trong tập tin?",
+        "answers": ["grep", "search", "find", "text"],
+        "correct": "grep"
+    },
+    {
+        "question": "[Câu 22] Lệnh nào để sắp xếp nội dung tập tin?",
+        "answers": ["sort", "order", "arrange", "organize"],
+        "correct": "sort"
+    },
+    {
+        "question": "[Câu 23] Lệnh nào để đếm số dòng, từ trong tập tin?",
+        "answers": ["wc", "count", "lines", "words"],
+        "correct": "wc"
+    },
+    {
+        "question": "[Câu 24] Lệnh nào để hiển thị những dòng đầu của tập tin?",
+        "answers": ["head", "top", "first", "begin"],
+        "correct": "head"
+    },
+    {
+        "question": "[Câu 25] Lệnh nào để hiển thị những dòng cuối của tập tin?",
+        "answers": ["tail", "end", "last", "bottom"],
+        "correct": "tail"
+    },
+    {
+        "question": "[Câu 26] Lệnh nào để tạo liên kết tượng trưng (symbolic link)?",
+        "answers": ["ln", "link", "symlink", "connect"],
+        "correct": "ln"
+    },
+    {
+        "question": "[Câu 27] Lệnh nào để xem thông tin chi tiết về tập tin?",
+        "answers": ["stat", "info", "details", "file"],
+        "correct": "stat"
+    },
+    {
+        "question": "[Câu 28] Lệnh nào để hiển thị loại tập tin?",
+        "answers": ["file", "type", "format", "kind"],
+        "correct": "file"
+    },
+    {
+        "question": "[Câu 29] Lệnh nào để so sánh hai tập tin?",
+        "answers": ["diff", "compare", "cmp", "check"],
+        "correct": "diff"
+    },
+    {
+        "question": "[Câu 30] Lệnh nào để gửi tín hiệu đến tiến trình?",
+        "answers": ["killall", "signal", "pkill", "terminate"],
+        "correct": "killall"
+    },
+    {
+        "question": "[Câu 31] Lệnh nào để xem thông tin về người dùng đang đăng nhập?",
+        "answers": ["who", "users", "login", "current"],
+        "correct": "who"
+    },
+    {
+        "question": "[Câu 32] Lệnh nào để xem thông tin người dùng hiện tại?",
+        "answers": ["whoami", "user", "me", "current"],
+        "correct": "whoami"
+    },
+    {
+        "question": "[Câu 33] Lệnh nào để thay đổi mật khẩu?",
+        "answers": ["passwd", "password", "changepass", "pwd"],
+        "correct": "passwd"
+    },
+    {
+        "question": "[Câu 34] Lệnh nào để chuyển đổi người dùng?",
+        "answers": ["su", "switch", "change", "user"],
+        "correct": "su"
+    },
+    {
+        "question": "[Câu 35] Lệnh nào để thực hiện lệnh với quyền root?",
+        "answers": ["sudo", "root", "admin", "super"],
+        "correct": "sudo"
+    },
+    {
+        "question": "[Câu 36] Lệnh nào để tạo bí danh cho lệnh?",
+        "answers": ["alias", "nickname", "shortcut", "abbrev"],
+        "correct": "alias"
+    },
+    {
+        "question": "[Câu 37] Lệnh nào để hiển thị các biến môi trường?",
+        "answers": ["env", "environment", "vars", "settings"],
+        "correct": "env"
+    },
+    {
+        "question": "[Câu 38] Lệnh nào để xuất biến môi trường?",
+        "answers": ["export", "set", "define", "declare"],
+        "correct": "export"
+    },
+    {
+        "question": "[Câu 39] Lệnh nào để hiển thị đường dẫn lệnh?",
+        "answers": ["which", "where", "locate", "path"],
+        "correct": "which"
+    },
+    {
+        "question": "[Câu 40] Lệnh nào để hiển thị thông tin về lệnh?",
+        "answers": ["man", "help", "info", "manual"],
+        "correct": "man"
+    },
+    {
+        "question": "[Câu 41] Lệnh nào để hiển thị ngày giờ hệ thống?",
+        "answers": ["date", "time", "now", "clock"],
+        "correct": "date"
+    },
+    {
+        "question": "[Câu 42] Lệnh nào để hiển thị lịch?",
+        "answers": ["cal", "calendar", "month", "date"],
+        "correct": "cal"
+    },
+    {
+        "question": "[Câu 43] Lệnh nào để tính thời gian chạy lệnh?",
+        "answers": ["time", "timer", "duration", "measure"],
+        "correct": "time"
+    },
+    {
+        "question": "[Câu 44] Lệnh nào để tạm dừng thực thi trong một khoảng thời gian?",
+        "answers": ["sleep", "wait", "pause", "delay"],
+        "correct": "sleep"
+    },
+    {
+        "question": "[Câu 45] Lệnh nào để hiển thị thông tin uptime hệ thống?",
+        "answers": ["uptime", "runtime", "online", "system"],
+        "correct": "uptime"
+    },
+    {
+        "question": "[Câu 46] Lệnh nào để hiển thị thông tin bộ nhớ?",
+        "answers": ["free", "memory", "mem", "ram"],
+        "correct": "free"
+    },
+    {
+        "question": "[Câu 47] Lệnh nào để mount hệ thống tập tin?",
+        "answers": ["mount", "attach", "connect", "link"],
+        "correct": "mount"
+    },
+    {
+        "question": "[Câu 48] Lệnh nào để unmount hệ thống tập tin?",
+        "answers": ["umount", "unmount", "detach", "disconnect"],
+        "correct": "umount"
+    },
+    {
+        "question": "[Câu 49] Lệnh nào để nén tập tin bằng gzip?",
+        "answers": ["gzip", "compress", "zip", "pack"],
+        "correct": "gzip"
+    },
+    {
+        "question": "[Câu 50] Lệnh nào để giải nén tập tin gzip?",
+        "answers": ["gunzip", "uncompress", "unzip", "extract"],
+        "correct": "gunzip"
+    },
+    {
+        "question": "[Câu 51] Lệnh nào để hiển thị kernel version?",
+        "answers": ["uname", "kernel", "version", "system"],
+        "correct": "uname"
+    },
+    {
+        "question": "[Câu 52] Lệnh nào để ping một địa chỉ mạng?",
+        "answers": ["ping", "test", "check", "connect"],
+        "correct": "ping"
+    },
+    {
+        "question": "[Câu 53] Lệnh nào để tải tập tin từ internet?",
+        "answers": ["wget", "download", "get", "fetch"],
+        "correct": "wget"
+    },
+    {
+        "question": "[Câu 54] Lệnh nào để chuyển tập tin qua mạng?",
+        "answers": ["scp", "transfer", "copy", "send"],
+        "correct": "scp"
+    },
+    {
+        "question": "[Câu 55] Lệnh nào để kết nối SSH?",
+        "answers": ["ssh", "connect", "remote", "login"],
+        "correct": "ssh"
+    },
+    {
+        "question": "[Câu 56] Lệnh nào để hiển thị cấu hình mạng?",
+        "answers": ["ifconfig", "network", "ip", "config"],
+        "correct": "ifconfig"
+    },
+    {
+        "question": "[Câu 57] Lệnh nào để hiển thị bảng định tuyến?",
+        "answers": ["route", "routing", "gateway", "table"],
+        "correct": "route"
+    },
+    {
+        "question": "[Câu 58] Lệnh nào để hiển thị kết nối mạng?",
+        "answers": ["netstat", "network", "connections", "ports"],
+        "correct": "netstat"
+    },
+    {
+        "question": "[Câu 59] Lệnh nào để chỉnh sửa tập tin bằng vi?",
+        "answers": ["vi", "edit", "nano", "vim"],
+        "correct": "vi"
+    },
+    {
+        "question": "[Câu 60] Lệnh nào để chỉnh sửa tập tin bằng nano?",
+        "answers": ["nano", "edit", "vi", "emacs"],
+        "correct": "nano"
+    },
+    {
+        "question": "[Câu 61] Lệnh nào để lặp lại lệnh cuối cùng?",
+        "answers": ["!!", "repeat", "again", "last"],
+        "correct": "!!"
+    },
+    {
+        "question": "[Câu 62] Lệnh nào để chạy lệnh trong nền?",
+        "answers": ["&", "bg", "background", "nohup"],
+        "correct": "&"
+    },
+    {
+        "question": "[Câu 63] Lệnh nào để đưa tiến trình về nền?",
+        "answers": ["bg", "background", "&", "back"],
+        "correct": "bg"
+    },
+    {
+        "question": "[Câu 64] Lệnh nào để đưa tiến trình lên foreground?",
+        "answers": ["fg", "foreground", "front", "active"],
+        "correct": "fg"
+    },
+    {
+        "question": "[Câu 65] Lệnh nào để hiển thị các job đang chạy?",
+        "answers": ["jobs", "tasks", "processes", "running"],
+        "correct": "jobs"
+    },
+    {
+        "question": "[Câu 66] Lệnh nào để chạy lệnh không bị gián đoạn khi đăng xuất?",
+        "answers": ["nohup", "background", "persistent", "daemon"],
+        "correct": "nohup"
+    },
+    {
+        "question": "[Câu 67] Lệnh nào để hiển thị ID người dùng và nhóm?",
+        "answers": ["id", "userid", "uid", "identity"],
+        "correct": "id"
+    },
+    {
+        "question": "[Câu 68] Lệnh nào để thay đổi nhóm tập tin?",
+        "answers": ["chgrp", "group", "chgroup", "setgroup"],
+        "correct": "chgrp"
+    },
+    {
+        "question": "[Câu 69] Lệnh nào để hiển thị các nhóm của người dùng?",
+        "answers": ["groups", "group", "membership", "teams"],
+        "correct": "groups"
+    },
+    {
+        "question": "[Câu 70] Lệnh nào để tạo người dùng mới?",
+        "answers": ["useradd", "adduser", "newuser", "create"],
+        "correct": "useradd"
+    },
+    {
+        "question": "[Câu 71] Lệnh nào để xóa người dùng?",
+        "answers": ["userdel", "deluser", "removeuser", "delete"],
+        "correct": "userdel"
+    },
+    {
+        "question": "[Câu 72] Lệnh nào để sửa thông tin người dùng?",
+        "answers": ["usermod", "moduser", "edituser", "modify"],
+        "correct": "usermod"
+    },
+    {
+        "question": "[Câu 73] Lệnh nào để tạo nhóm mới?",
+        "answers": ["groupadd", "addgroup", "newgroup", "create"],
+        "correct": "groupadd"
+    },
+    {
+        "question": "[Câu 74] Lệnh nào để xóa nhóm?",
+        "answers": ["groupdel", "delgroup", "removegroup", "delete"],
+        "correct": "groupdel"
+    },
+    {
+        "question": "[Câu 75] Lệnh nào để hiển thị thông tin về tập tin thực thi?",
+        "answers": ["ldd", "libs", "dependencies", "linked"],
+        "correct": "ldd"
+    },
+    {
+        "question": "[Câu 76] Lệnh nào để tạo crontab (lịch trình tự động)?",
+        "answers": ["crontab", "schedule", "timer", "auto"],
+        "correct": "crontab"
+    },
+    {
+        "question": "[Câu 77] Lệnh nào để xem log hệ thống?",
+        "answers": ["dmesg", "log", "syslog", "messages"],
+        "correct": "dmesg"
+    },
+    {
+        "question": "[Câu 78] Lệnh nào để theo dõi tập tin log real-time?",
+        "answers": ["tail -f", "follow", "monitor", "watch"],
+        "correct": "tail -f"
+    },
+    {
+        "question": "[Câu 79] Lệnh nào để tìm tập tin theo tên?",
+        "answers": ["locate", "find", "search", "where"],
+        "correct": "locate"
+    },
+    {
+        "question": "[Câu 80] Lệnh nào để cập nhật database cho locate?",
+        "answers": ["updatedb", "update", "refresh", "rebuild"],
+        "correct": "updatedb"
+    },
+    {
+        "question": "[Câu 81] Lệnh nào để hiển thị checksum MD5?",
+        "answers": ["md5sum", "md5", "checksum", "hash"],
+        "correct": "md5sum"
+    },
+    {
+        "question": "[Câu 82] Lệnh nào để hiển thị checksum SHA256?",
+        "answers": ["sha256sum", "sha256", "checksum", "hash"],
+        "correct": "sha256sum"
+    },
+    {
+        "question": "[Câu 83] Lệnh nào để đồng bộ dữ liệu?",
+        "answers": ["sync", "synchronize", "flush", "write"],
+        "correct": "sync"
+    },
+    {
+        "question": "[Câu 84] Lệnh nào để sao chép dữ liệu với rsync?",
+        "answers": ["rsync", "sync", "copy", "backup"],
+        "correct": "rsync"
+    },
+    {
+        "question": "[Câu 85] Lệnh nào để hiển thị cấu trúc thư mục dạng cây?",
+        "answers": ["tree", "structure", "hierarchy", "dir"],
+        "correct": "tree"
+    },
+    {
+        "question": "[Câu 86] Lệnh nào để hiển thị thông tin phần cứng?",
+        "answers": ["lshw", "hardware", "info", "system"],
+        "correct": "lshw"
+    },
+    {
+        "question": "[Câu 87] Lệnh nào để hiển thị thông tin CPU?",
+        "answers": ["lscpu", "cpu", "processor", "info"],
+        "correct": "lscpu"
+    },
+    {
+        "question": "[Câu 88] Lệnh nào để hiển thị thiết bị USB?",
+        "answers": ["lsusb", "usb", "devices", "hardware"],
+        "correct": "lsusb"
+    },
+    {
+        "question": "[Câu 89] Lệnh nào để hiển thị thiết bị PCI?",
+        "answers": ["lspci", "pci", "hardware", "devices"],
+        "correct": "lspci"
+    },
+    {
+        "question": "[Câu 90] Lệnh nào để xem thông tin phân vùng đĩa?",
+        "answers": ["fdisk", "partition", "disk", "drive"],
+        "correct": "fdisk"
+    },
+    {
+        "question": "[Câu 91] Lệnh nào để format phân vùng ext4?",
+        "answers": ["mkfs.ext4", "format", "mkfs", "create"],
+        "correct": "mkfs.ext4"
+    },
+    {
+        "question": "[Câu 92] Lệnh nào để kiểm tra tính toàn vẹn hệ thống tập tin?",
+        "answers": ["fsck", "check", "verify", "scan"],
+        "correct": "fsck"
+    },
+    {
+        "question": "[Câu 93] Lệnh nào để chạy lệnh với timeout?",
+        "answers": ["timeout", "limit", "timer", "expire"],
+        "correct": "timeout"
+    },
+    {
+        "question": "[Câu 94] Lệnh nào để theo dõi thay đổi tập tin?",
+        "answers": ["watch", "monitor", "observe", "track"],
+        "correct": "watch"
+    },
+    {
+        "question": "[Câu 95] Lệnh nào để tạo tập tin ISO?",
+        "answers": ["mkisofs", "iso", "create", "burn"],
+        "correct": "mkisofs"
+    },
+    {
+        "question": "[Câu 96] Lệnh nào để mount tập tin ISO?",
+        "answers": ["mount -o loop", "mount", "attach", "connect"],
+        "correct": "mount -o loop"
+    },
+    {
+        "question": "[Câu 97] Lệnh nào để hiển thị hex dump của tập tin?",
+        "answers": ["hexdump", "hex", "dump", "binary"],
+        "correct": "hexdump"
+    },
+    {
+        "question": "[Câu 98] Lệnh nào để chuyển đổi ký tự trong tập tin?",
+        "answers": ["tr", "translate", "convert", "transform"],
+        "correct": "tr"
+    },
+    {
+        "question": "[Câu 99] Lệnh nào để tách tập tin thành nhiều phần?",
+        "answers": ["split", "divide", "separate", "chunk"],
+        "correct": "split"
+    },
+    {
+        "question": "[Câu 100] Lệnh nào để ghép các tập tin lại?",
+        "answers": ["cat", "join", "merge", "combine"],
+        "correct": "cat"
+    }
+];
         let currentQuestion = 0;
         let score = 0;
         let isAnimating = false;
